@@ -4,10 +4,9 @@ import { motion } from 'framer-motion';
 import { MapPin, Phone, Clock, MessageCircle, Mail, Calendar } from 'lucide-react';
 
 const schedules = [
-  { day: 'Lunes - Viernes', hours: '9:00 AM - 8:00 PM', available: true },
-  { day: 'Sábado', hours: '9:00 AM - 8:00 PM', available: true },
-  { day: 'Domingo', hours: '10:00 AM - 6:00 PM', available: false },
-  { day: 'Festivos', hours: '10:00 AM - 6:00 PM', available: false },
+  { day: 'Lun - Vie', hours: '9AM - 8PM', available: true },
+  { day: 'Sábado', hours: '9AM - 8PM', available: true },
+  { day: 'Domingo', hours: '10AM - 6PM', available: false },
 ];
 
 export default function Location() {
@@ -18,42 +17,43 @@ export default function Location() {
   };
 
   return (
-    <section id="ubicacion" className="py-24 px-6 bg-black">
+    <section id="ubicacion" className="py-16 md:py-24 px-4 md:px-6 bg-zinc-950">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
-          <span className="inline-block px-4 py-1.5 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 text-sm font-medium tracking-wider mb-4">
+          <span className="inline-block px-3 py-1.5 md:px-4 md:py-1.5 bg-red-600/10 border border-red-600/20 rounded-full text-red-500 text-xs md:text-sm font-medium tracking-wider mb-3 md:mb-4">
             VISÍTANOS
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
-            Encuéntranos <span className="text-amber-500">Fácil</span>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
+            Encuéntranos <span className="text-red-600">Fácil</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Estamos ubicados en una zona privilegiada con fácil acceso. ¡Te esperamos!
+          <p className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto">
+            ¡Te esperamos!
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-8">
+        <div className="grid lg:grid-cols-5 gap-4 md:gap-8">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-3 rounded-2xl overflow-hidden border border-neutral-800"
+            className="lg:col-span-3 rounded-xl md:rounded-2xl overflow-hidden border border-zinc-800"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!4v1769722746936!6m8!1m7!1sjxdt47NfEhWFSya8A2y2Og!2m2!1d1.515728134577144!2d-77.04487964153793!3f334.89989609479284!4f-11.14610633047812!5f0.7820865974627469"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d628.1370029412318!2d-77.0461823052438!3d1.5163383919045565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1771962397097!5m2!1ses!2sco"
               width="100%"
-              height="450"
+              height="300"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
-              className="w-full h-full"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-48 md:h-72 lg:h-[450px]"
             />
           </motion.div>
 
@@ -62,53 +62,53 @@ export default function Location() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="lg:col-span-2 space-y-4"
+            className="lg:col-span-2 space-y-3 md:space-y-4"
           >
-            <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-amber-500" />
+            <div className="bg-zinc-900 border border-zinc-800 rounded-xl md:rounded-2xl p-4 md:p-6">
+              <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-red-600/20 flex items-center justify-center">
+                  <MapPin className="w-4 h-4 md:w-5 md:h-5 text-red-600" />
                 </div>
-                <h3 className="font-serif text-xl font-bold text-white">Ubicación</h3>
+                <h3 className="font-display text-lg md:text-xl font-bold text-white">Ubicación</h3>
               </div>
               
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-neutral-800 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-4 h-4 text-amber-500" />
+              <div className="space-y-2 md:space-y-3">
+                <div className="flex items-start gap-2 md:gap-3">
+                  <div className="w-6 h-6 md:w-8 md:h-8 rounded-lg bg-zinc-800 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-3 h-3 md:w-4 md:h-4 text-red-600" />
                   </div>
                   <div>
-                    <p className="text-white font-medium">Cl. 2ª #1E-45</p>
-                    <p className="text-gray-400 text-sm">San Bernardo, Nariño</p>
+                    <p className="text-white font-medium text-sm md:text-base">Cl. 2ª #1E-45</p>
+                    <p className="text-gray-400 text-xs md:text-sm">San Bernardo, Pasto</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-3 pt-2">
-                  <div className="w-8 h-8 rounded-lg bg-neutral-800 flex items-center justify-center">
-                    <Phone className="w-4 h-4 text-amber-500" />
+                <div className="flex items-center gap-2 md:gap-3">
+                  <div className="w-6 h-6 md:w-8 md:h-8 rounded-lg bg-zinc-800 flex items-center justify-center">
+                    <Phone className="w-3 h-3 md:w-4 md:h-4 text-red-600" />
                   </div>
-                  <a href="tel:+573238647250" className="text-white hover:text-amber-500 transition-colors">
+                  <a href="tel:+573238647250" className="text-white hover:text-red-500 transition-colors text-sm md:text-base">
                     +57 323 8647250
                   </a>
                 </div>
               </div>
             </div>
 
-            <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center">
-                  <Clock className="w-5 h-5 text-amber-500" />
+            <div className="bg-zinc-900 border border-zinc-800 rounded-xl md:rounded-2xl p-4 md:p-6">
+              <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-red-600/20 flex items-center justify-center">
+                  <Clock className="w-4 h-4 md:w-5 md:h-5 text-red-600" />
                 </div>
-                <h3 className="font-serif text-xl font-bold text-white">Horario</h3>
+                <h3 className="font-display text-lg md:text-xl font-bold text-white">Horario</h3>
               </div>
               
-              <div className="space-y-2">
+              <div className="space-y-1 md:space-y-2">
                 {schedules.map((schedule) => (
                   <div key={schedule.day} className="flex items-center justify-between">
-                    <span className={`text-sm ${schedule.available ? 'text-white' : 'text-gray-500'}`}>
+                    <span className={`text-xs md:text-sm ${schedule.available ? 'text-white' : 'text-gray-500'}`}>
                       {schedule.day}
                     </span>
-                    <span className={`text-sm font-medium ${schedule.available ? 'text-amber-500' : 'text-gray-600'}`}>
+                    <span className={`text-xs md:text-sm font-medium ${schedule.available ? 'text-red-500' : 'text-gray-600'}`}>
                       {schedule.hours}
                     </span>
                   </div>
@@ -117,12 +117,11 @@ export default function Location() {
             </div>
 
             <motion.button
-              whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={openWhatsApp}
-              className="w-full bg-gradient-to-r from-amber-500 to-amber-400 text-black font-bold py-4 rounded-xl hover:shadow-[0_0_30px_rgba(245,158,11,0.4)] transition-all duration-300 flex items-center justify-center gap-3"
+              className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 md:py-4 rounded-xl hover:shadow-[0_0_20px_rgba(220,38,38,0.4)] transition-all duration-300 flex items-center justify-center gap-2 text-sm md:text-base"
             >
-              <Calendar className="w-5 h-5" />
+              <Calendar className="w-4 h-4 md:w-5 md:h-5" />
               Reservar Cita
             </motion.button>
           </motion.div>
@@ -132,12 +131,12 @@ export default function Location() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 grid md:grid-cols-3 gap-6"
+          className="mt-8 md:mt-12 grid grid-cols-3 gap-2 md:gap-6"
         >
           {[
-            { icon: MessageCircle, title: 'WhatsApp', desc: 'Responemos en minutos', action: 'Escríbenos' },
-            { icon: Phone, title: 'Teléfono', desc: 'Atención personalizada', action: 'Llamar ahora' },
-            { icon: Mail, title: 'Email', desc: 'Para consultas formales', action: 'Enviar email' },
+            { icon: MessageCircle, title: 'WhatsApp', action: 'Escríbenos' },
+            { icon: Phone, title: 'Teléfono', action: 'Llamar' },
+            { icon: Mail, title: 'Email', action: 'Enviar' },
           ].map((item, index) => (
             <motion.div
               key={item.title}
@@ -145,14 +144,13 @@ export default function Location() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 text-center hover:border-amber-500/30 transition-colors"
+              className="bg-zinc-900 border border-zinc-800 rounded-xl p-3 md:p-6 text-center hover:border-red-600/30 transition-colors"
             >
-              <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-amber-500/20 flex items-center justify-center">
-                <item.icon className="w-6 h-6 text-amber-500" />
+              <div className="w-8 h-8 md:w-12 md:h-12 mx-auto mb-2 md:mb-4 rounded-full bg-red-600/20 flex items-center justify-center">
+                <item.icon className="w-4 h-4 md:w-6 md:h-6 text-red-600" />
               </div>
-              <h4 className="font-bold text-white mb-1">{item.title}</h4>
-              <p className="text-gray-400 text-sm mb-3">{item.desc}</p>
-              <button className="text-amber-500 text-sm font-medium hover:text-amber-400 transition-colors">
+              <h4 className="font-bold text-white text-xs md:text-base mb-1">{item.title}</h4>
+              <button className="text-red-500 text-[10px] md:text-sm font-medium hover:text-red-400 transition-colors">
                 {item.action} →
               </button>
             </motion.div>

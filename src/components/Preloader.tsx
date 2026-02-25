@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Scissors } from 'lucide-react';
 
 export default function Preloader() {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,9 +20,9 @@ export default function Preloader() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, y: -100 }}
           transition={{ duration: 0.6, ease: 'easeInOut' }}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-zinc-950"
         >
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-neutral-900 via-black to-black" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-900 via-zinc-950 to-zinc-950" />
           
           <motion.div
             initial={{ scale: 0, rotate: -180 }}
@@ -35,9 +34,9 @@ export default function Preloader() {
               animate={{
                 scale: [1, 1.1, 1],
                 boxShadow: [
-                  '0 0 20px rgba(245,158,11,0.3)',
-                  '0 0 40px rgba(245,158,11,0.5)',
-                  '0 0 20px rgba(245,158,11,0.3)'
+                  '0 0 20px rgba(220,38,38,0.3)',
+                  '0 0 40px rgba(220,38,38,0.5)',
+                  '0 0 20px rgba(220,38,38,0.3)'
                 ]
               }}
               transition={{
@@ -45,9 +44,25 @@ export default function Preloader() {
                 repeat: Infinity,
                 ease: 'easeInOut',
               }}
-              className="w-24 h-24 rounded-full bg-gradient-to-br from-amber-500 via-amber-300 to-amber-600 flex items-center justify-center"
+              className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-red-600 flex items-center justify-center"
             >
-              <Scissors className="w-12 h-12 text-black" />
+              <svg 
+                viewBox="0 0 64 64" 
+                className="w-14 h-14 md:w-16 md:h-16 text-white"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="32" cy="32" r="28" />
+                <path d="M20 24c4-8 16-8 20 0" />
+                <circle cx="24" cy="20" r="3" fill="currentColor" />
+                <circle cx="40" cy="20" r="3" fill="currentColor" />
+                <path d="M28 28l8 4" />
+                <path d="M18 32c2 4 6 6 12 6 8 0 14-4 16-12" />
+                <path d="M18 44c0-8 8-16 24-16" />
+              </svg>
             </motion.div>
           </motion.div>
 
@@ -57,21 +72,20 @@ export default function Preloader() {
             transition={{ delay: 0.5, duration: 0.6 }}
             className="relative z-10 text-center mt-8"
           >
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-amber-500 mb-3 tracking-wider">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-3 tracking-wider">
               URUS
             </h1>
             <p className="text-gray-400 text-sm md:text-base tracking-[0.3em] uppercase">
               Barber Studio
             </p>
-            <p className="text-gray-600 text-xs mt-4">El arte de la caballerosidad</p>
           </motion.div>
 
-          <div className="absolute bottom-12 w-64 h-1 bg-neutral-800 rounded-full overflow-hidden">
+          <div className="absolute bottom-12 w-64 h-1 bg-zinc-800 rounded-full overflow-hidden">
             <motion.div
               initial={{ width: '0%' }}
               animate={{ width: '100%' }}
               transition={{ duration: 2.3, ease: 'easeInOut' }}
-              className="h-full bg-gradient-to-r from-amber-600 via-amber-400 to-amber-600"
+              className="h-full bg-red-600"
             />
           </div>
 

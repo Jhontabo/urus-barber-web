@@ -6,38 +6,38 @@ import { Scissors, Shield, Sparkles, Crown, Check, Clock } from 'lucide-react';
 const services = [
   {
     icon: Scissors,
-    title: 'Corte de Cabello',
-    description: 'Corte de precisión con técnicas modernas y clásicas, adaptado a tu estilo personal.',
+    title: 'Corte',
+    description: 'Corte de precisión adaptado a tu estilo.',
     price: '$12.000',
     duration: '45 min',
-    features: ['Técnica de precisión', 'Estilo personalizado', 'Consulta previa'],
+    features: ['Técnica precisión', 'Estilo personalizado'],
     popular: false,
   },
   {
     icon: Shield,
-    title: 'Arreglo de Barba',
-    description: 'Diseño y mantenimiento de barba con toalla caliente y aceites premium.',
+    title: 'Barba',
+    description: 'Diseño y mantenimiento con productos premium.',
     price: '$8.000',
     duration: '30 min',
-    features: ['Toalla caliente', 'Aceites premium', 'Diseño personalizado'],
+    features: ['Toalla caliente', 'Aceites premium'],
     popular: false,
   },
   {
     icon: Sparkles,
-    title: 'Afeitado Tradicional',
-    description: 'Experiencia de spa masculino con navaja caliente y productos artesanales.',
+    title: 'Afeitado',
+    description: 'Experiencia de spa masculino.',
     price: '$10.000',
     duration: '35 min',
-    features: ['Navaja caliente', 'Productos artesanales', 'Masaje facial'],
+    features: ['Navaja caliente', 'Masaje facial'],
     popular: false,
   },
   {
     icon: Crown,
     title: 'Combo Premium',
-    description: 'La experiencia completa: Corte + Barba + Afeitado tradicional.',
+    description: 'Corte + Barba + Afeitado completo.',
     price: '$25.000',
     duration: '90 min',
-    features: ['Todos los servicios', 'Ahorra $5.000', 'Experiencia VIP'],
+    features: ['Todos los servicios', 'Ahorra $5.000'],
     popular: true,
   },
 ];
@@ -67,23 +67,23 @@ export default function Services() {
   };
 
   return (
-    <section id="servicios" className="py-24 px-6 bg-black">
+    <section id="servicios" className="py-16 md:py-24 px-4 md:px-6 bg-zinc-950">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
-          <span className="inline-block px-4 py-1.5 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 text-sm font-medium tracking-wider mb-4">
+          <span className="inline-block px-3 py-1.5 md:px-4 md:py-1.5 bg-red-600/10 border border-red-600/20 rounded-full text-red-500 text-xs md:text-sm font-medium tracking-wider mb-3 md:mb-4">
             NUESTROS SERVICIOS
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
-            Transforma tu <span className="text-amber-500">Look</span>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
+            Transforma tu <span className="text-red-600">Look</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Tratamientos exclusivos diseñados para el caballero moderno que exige excelencia
+          <p className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto">
+            Si no te gusta el resultado, ¡no pagas!
           </p>
         </motion.div>
 
@@ -92,64 +92,64 @@ export default function Services() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6"
         >
           {services.map((service) => (
             <motion.div
               key={service.title}
               variants={item}
-              className={`relative bg-neutral-900 border rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
+              className={`relative bg-zinc-900 border rounded-xl md:rounded-2xl p-3 md:p-6 transition-all duration-300 hover:-translate-y-1 md:hover:-translate-y-2 hover:shadow-xl ${
                 service.popular
-                  ? 'border-amber-500/50 shadow-[0_0_30px_rgba(245,158,11,0.15)]'
-                  : 'border-neutral-800 hover:border-amber-500/30'
+                  ? 'border-red-600/50 shadow-[0_0_20px_rgba(220,38,38,0.15)]'
+                  : 'border-zinc-800 hover:border-red-600/30'
               }`}
             >
               {service.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 to-amber-400 text-black px-4 py-1 rounded-full text-sm font-bold flex items-center gap-1">
-                  <Crown className="w-3 h-3" /> MÁS POPULAR
+                <div className="absolute -top-2 md:-top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white px-2 md:px-4 py-0.5 md:py-1 rounded-full text-[10px] md:text-sm font-bold flex items-center gap-1">
+                  <Crown className="w-2.5 md:w-3 h-2.5 md:h-3" /> POPULAR
                 </div>
               )}
 
-              <div className="text-center mb-4">
-                <div className={`w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-4 transition-transform duration-300 hover:scale-110 ${
+              <div className="text-center mb-2 md:mb-4">
+                <div className={`w-10 h-10 md:w-16 md:h-16 mx-auto rounded-xl md:rounded-2xl flex items-center justify-center mb-2 md:mb-4 transition-transform duration-300 hover:scale-110 ${
                   service.popular
-                    ? 'bg-gradient-to-br from-amber-500 to-amber-300'
-                    : 'bg-neutral-800'
+                    ? 'bg-red-600'
+                    : 'bg-zinc-800'
                 }`}>
-                  <service.icon className={`w-8 h-8 ${service.popular ? 'text-black' : 'text-amber-500'}`} />
+                  <service.icon className={`w-5 h-5 md:w-8 md:h-8 ${service.popular ? 'text-white' : 'text-red-600'}`} />
                 </div>
 
-                <h3 className="font-serif text-xl font-bold text-white mb-2">
+                <h3 className="font-display text-sm md:text-xl font-bold text-white mb-1 md:mb-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-400 text-sm">{service.description}</p>
+                <p className="text-gray-400 text-[10px] md:text-sm line-clamp-2">{service.description}</p>
               </div>
 
-              <div className="flex items-center justify-center gap-2 mb-4 text-gray-500">
-                <Clock className="w-4 h-4" />
-                <span className="text-xs">{service.duration}</span>
+              <div className="flex items-center justify-center gap-1 md:gap-2 mb-2 md:mb-4 text-gray-500">
+                <Clock className="w-3 h-3 md:w-4 md:h-4" />
+                <span className="text-[10px] md:text-xs">{service.duration}</span>
               </div>
 
-              <ul className="space-y-2 mb-6">
+              <ul className="space-y-1 md:space-y-2 mb md:mb--26">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center justify-center gap-2 text-xs text-gray-500">
-                    <Check className="w-3 h-3 text-amber-500 flex-shrink-0" />
+                  <li key={idx} className="flex items-center justify-center gap-1 md:gap-2 text-[10px] md:text-xs text-gray-500">
+                    <Check className="w-2.5 md:w-3 h-2.5 md:h-3 text-red-600 flex-shrink-0" />
                     {feature}
                   </li>
                 ))}
               </ul>
 
-              <div className="text-center mb-4">
-                <div className="text-3xl font-bold text-white">{service.price}</div>
-                <div className="text-xs text-gray-500">COP</div>
+              <div className="text-center mb-2 md:mb-4">
+                <div className="text-xl md:text-3xl font-bold text-white">{service.price}</div>
+                <div className="text-[10px] md:text-xs text-gray-500">COP</div>
               </div>
 
               <button
                 onClick={() => openWhatsApp(service.title)}
-                className={`w-full py-3 rounded-full font-medium transition-all duration-300 active:scale-95 ${
+                className={`w-full py-2 md:py-3 rounded-full font-medium text-xs md:text-sm transition-all duration-300 active:scale-95 ${
                   service.popular
-                    ? 'bg-gradient-to-r from-amber-500 to-amber-400 text-black hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]'
-                    : 'border border-amber-500/50 text-amber-500 hover:bg-amber-500 hover:text-black'
+                    ? 'bg-red-600 text-white hover:bg-red-700'
+                    : 'border border-red-600/50 text-red-500 hover:bg-red-600 hover:text-white'
                 }`}
               >
                 Reservar
@@ -162,14 +162,14 @@ export default function Services() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          className="text-center mt-8 md:mt-12"
         >
-          <p className="text-gray-400 mb-4">¿Necesitas algo diferente?</p>
+          <p className="text-gray-400 mb-3 md:mb-4 text-sm">¿Necesitas algo diferente?</p>
           <button
             onClick={() => openWhatsApp()}
-            className="text-amber-500 hover:text-amber-400 font-medium underline underline-offset-4 transition-colors"
+            className="text-red-500 hover:text-red-400 font-medium text-sm md:text-base"
           >
-            Contáctanos para servicios personalizados
+            Contáctanos →
           </button>
         </motion.div>
       </div>

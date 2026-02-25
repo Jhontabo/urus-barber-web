@@ -33,10 +33,10 @@ export default function FloatingWhatsApp() {
         <motion.div
           initial={{ opacity: 0, x: 10 }}
           whileHover={{ opacity: 1, x: 0 }}
-          className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-neutral-900 text-white text-sm px-4 py-2 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap"
+          className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-zinc-900 text-white text-sm px-4 py-2 rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-zinc-700"
         >
           ¡Reserva tu cita!
-          <span className="absolute left-full top-1/2 -translate-y-1/2 border-8 border-transparent border-l-neutral-900" />
+          <span className="absolute left-full top-1/2 -translate-y-1/2 border-8 border-transparent border-l-zinc-900" />
         </motion.div>
       </motion.button>
     </motion.div>
